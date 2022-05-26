@@ -1,0 +1,33 @@
+{% extends "familia/index.html" %}
+{% load static%}
+
+<!-- este no se quita -->
+{% load bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+<!--  {% bootstrap_css %#} -->
+<!--  {% bootstrap_javascript %#}  -->
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+<!--{% bootstrap_messages %} -->
+
+{% block cuerpo_inicial %}
+
+<div class="container">
+   <div class="row">
+     <div class="col">
+      <h1>CARGAR PRIMOS DE PAPA</h1>
+     </div>
+     </div>
+     <dov class="row">
+     <div class="col">
+      <form action="/familia/agregar/" method="post">
+         {% csrf_token %} 
+         {% bootstrap_form form%}
+         {% bootstrap_button "Guardar" button_type="submit" button_class="btn-primary" %}
+      </form>
+     </div>
+   </div>
+ </div>
+ 
+ {% endblock %}
